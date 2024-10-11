@@ -12,9 +12,10 @@ router.post('/login',authController.login);
 
 module.exports = router;
 */
+require("dotenv").config()
 const express = require('express');
 const router = express.Router();
-const authController = require('../controllers/authController');
+const authController = require('../back_end/controllers/authController');
 
 // Route for registering new users
 router.post('/register', authController.register);

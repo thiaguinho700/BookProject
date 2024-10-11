@@ -11,7 +11,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const authRoutes = require('./Routes/authRoutes')
+const authRoutes = require('../code/livraria_api/authRoutes')
 
 // Conexão com o mongo db
 
@@ -23,7 +23,7 @@ mongoose.connect('mongodb+srv://thiagocontato1232:qwasqwas@library.bayuj.mongodb
 }).then(()=>console.log('Mongodb conectado')).catch(err=>console.error('Erro ao conectar no mongo',err));
 
 // Importação das rotas
-const bookRoutes = require('./Routes/books');
+const bookRoutes = require('../code/livraria_api/books');
 app.use('/api/books',bookRoutes); // irá retornar a rota dos livros
 app.use('/api/auth',authRoutes);
 // Define a porta do servidor
